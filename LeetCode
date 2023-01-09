@@ -1,0 +1,472 @@
+#include<iostream>
+#include<vector>
+#include<stack>
+#include<unordered_map>
+#include<string>
+#include<algorithm>
+#include <set>
+
+using namespace std;
+
+struct problem {
+    //Problems with Arrays
+    //Problem 1: Remove Duplicates from Sorted Arrays
+    int removeDuplicates(vector<int>& nums);
+
+    //Problem 2: Plus One
+    vector<int> plusOne(vector<int>& digits);
+
+    //Problem 3: Pascal's Triangle
+    vector<vector<int>> generate(int numRows);
+
+    //Problem 4: Single Number
+    int singleNumber(vector<int>& nums);
+
+    //Problem 5: Majority Element
+    int majorityElement(vector<int>& nums);
+
+    //Problem 6: Contains Duplicate
+    bool containsDuplicate(vector<int>& nums);
+
+    //Problem 7: Intersection of Two Arrays
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2);
+
+    //Problem 8: Third Maximum Number
+    int thirdMax(vector<int>& nums);
+
+    //Problem 9: Shuffle the Array
+    vector<int> shuffle(vector<int>& nums, int n);
+
+    //Problem 10: Shuffle String
+    string restoreString(string s, vector<int>& indices);
+
+    //Problem 11: Final Value of Variable After Performing Operations
+    int finalValueAfterOperations(vector<string>& operations);
+
+    //Problems with String
+    //Problem 1: Roman to Integer
+    int romanToInt(string s);
+
+    //Problem 2: Valid Parentheses
+    bool isValid(string s);
+
+    //Problem 3: Length of Last Word
+    int lengthOfLastWord(string s);
+
+    //Problem 4: Valid Anagram
+    bool isAnagram(string s, string t);
+
+    //Problem 5: Reverse String
+    vector<char> reverseString(vector<char>& s);
+
+    //Problem 6: First Unique Character in a String
+    int firstUniqueChar(string s);
+
+    //Problem 7: Find the Difference
+    char findTheDifference(string s, string t);
+
+    //Problem 8: Fizz Buzz
+    vector<string> fizzBuzz(int n);
+
+    //Problem 9: To Lower Case
+    string toLowerCase(string s);
+
+    //Problem 10: Shuffle String
+    //Problem 11: Final Value of Variable After Performing Operations
+};
+
+
+int main() {
+
+    problem solution;
+
+    vector<int> nums1 = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+    int sol1 = solution.removeDuplicates(nums1);
+    cout << "Solution 1: " << sol1 << endl;
+
+    vector<int> digits1 = { 4,3,2,1 };
+    vector<int> sol2 = solution.plusOne(digits1);
+    cout << "Solution 2: ";
+    for (int i = 0; i < sol2.size(); i++) {
+        cout << sol2[i] << " ";
+    } 
+    cout<< endl;
+
+    int numRows = 5;
+    vector<vector<int>> sol3 = solution.generate(numRows);
+    cout << "Solution 3: " << endl;
+    for (int i = 0; i < sol3.size(); i++) {
+        for (int j = 0; j < sol3[i].size(); j++) {
+            cout << sol3[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    vector<int> nums2 = { 5,1,2,1,2 };
+    int sol4 = solution.singleNumber(nums2);
+    cout << "Solution 4: " << sol4 << endl;
+
+    vector<int> nums3 = { 2,2,1,1,1,2,2 };
+    int sol5 = solution.majorityElement(nums3);
+    cout << "Solution 5: " << sol5 << endl;
+
+    vector<int>nums4 = { 1,1,1,3,3,4,3,2,4,2 };
+    bool sol6 = solution.containsDuplicate(nums4);
+    cout << "solution 6: ";
+    if (sol6 == 1) {
+        cout << "true";
+    }
+    else {
+        cout << "False";
+    } 
+    cout<< endl;
+
+    vector<int>nums5_1 = { 4,9,5 }, nums5_2 = { 9,4,9,8,4 };
+    vector<int> sol7 = solution.intersection(nums5_1, nums5_2);
+    cout << "Solution 7: ";
+    for (int i = 0; i < sol7.size(); i++) {
+        cout << sol7[i] << " ";
+    }
+    cout << endl;
+
+    vector<int> nums6 = { 2,2,3,1 };
+    int sol8 = solution.thirdMax(nums6);
+    cout << "Solution 8: " << sol8 << endl;
+
+    vector<int>nums7 = { 1,2,3,4,4,3,2,1 }; int n = 4;
+    vector<int>sol9 = solution.shuffle(nums7, n);
+    cout << "Solution 9: ";
+    for (int i = 0; i < sol9.size(); i++) {
+        cout << sol9[i] << " ";
+    }
+    cout << endl;
+
+    string s = "codeleet"; 
+    vector<int>indices = { 4, 5, 6, 7, 0, 2, 1, 3 };
+    string sol10 = solution.restoreString(s, indices);
+    cout << "Solution 10: " << sol10 << endl;
+
+    vector<string> operations = { "X++","++X","--X","X--" };
+    int sol11 = solution.finalValueAfterOperations(operations);
+    cout << "Solution 11: " << sol11 << endl;
+
+    string s2 = "MCMXCIV";
+    int sol12 = solution.romanToInt(s2);
+    cout << "Solution 12: " << sol12 << endl;
+
+    string s3 = "()[]{}";
+    bool sol13 = solution.isValid(s3);
+    cout << "Solution 13: " << sol13 << endl;
+
+    string s4 = "   fly me   to   the moon  ";
+    int sol14 = solution.lengthOfLastWord(s4);
+    cout << "Solution 14: " << sol14 << endl;
+
+    string s5 = "anagram", t = "nagaram";
+    bool sol15 = solution.isAnagram(s5, t);
+    cout << "Solution 15: " << sol15 << endl;
+
+    vector<char> s6 = { 'H','a','n','n','a','h'};
+    vector<char> sol16=solution.reverseString(s6);
+    cout << "Solution 16: ";
+    for (int i = 0; i < sol16.size(); i++) {
+        cout << sol16[i] << " ";
+    }
+    cout<<endl;
+
+    string s7 = "leetcode";
+    int sol17 = solution.firstUniqueChar(s7);
+    cout << "Solution 17: " << sol17 << endl;
+
+    string s8 = "abcd", t2 = "abcde";
+    char sol18 = solution.findTheDifference(s8, t2);
+    cout << "Solution 18: " << sol18 << endl;
+
+    int n2 = 15;
+    vector<string> sol19 = solution.fizzBuzz(n2);
+    cout << "Solution 19: ";
+    for (int i = 0; i < sol19.size(); i++) {
+        cout << sol19[i] << " ";
+    }
+    cout << endl;
+
+    string s9 = "LOVELY";
+    string sol20 = solution.toLowerCase(s9);
+    cout << "Solution 20: " << sol20 << endl;
+
+
+    return 0;
+}
+
+
+int problem::removeDuplicates(vector<int>& nums) {
+    int i = 0;
+    for (int j = 1; j < nums.size(); j++) {
+        if (nums[i] != nums[j]) {
+            i++;
+            nums[i] = nums[j];
+        }
+    }
+    int k = i + 1;
+    return k;
+}
+
+vector<int> problem::plusOne(vector<int>& digits) {
+    for (int i = digits.size() - 1; i >= 0; i--) {
+        if (digits[i] == 9) {
+            digits[i] = 0;
+        }
+        else {
+            ++digits[i];
+            return digits;
+        }
+    }
+    digits.insert(digits.begin(), 1);
+    return digits;
+}
+
+vector<vector<int>> problem::generate(int numRows) {
+    vector<vector<int>> solution;
+    for (int i = 0; i < numRows; i++) {
+        vector<int> row(i + 1);
+        for (int j = 0; j <= i; j++) {
+            if (j == 0 || j == i) {
+                row[j] = 1;
+            }
+            else {
+                row[j] = solution[i - 1][j - 1] + solution[i - 1][j];
+            }
+        }
+        solution.push_back(row);
+    }
+    return solution;
+}
+
+int problem::singleNumber(vector<int>& nums) {
+    sort(nums.begin(), nums.end());
+    for (int i = 0; i < nums.size() - 1; i++) {
+        if (nums[i] != nums[i + 1]) {
+            return nums[i];
+        }
+        i++;
+    }
+    return nums.back();
+}
+
+int problem::majorityElement(vector<int>& nums) {
+    unordered_map<int, int> count;
+    for (int num : nums) {
+        count[num]++;
+        if (count[num] > nums.size() / 2) {
+            return num;
+        }
+    }
+    return -1;
+}
+
+bool problem::containsDuplicate(vector<int>& nums) {
+    sort(nums.begin(), nums.end());
+    for (int i = 0; i < nums.size() - 1; i++) {
+        if (nums[i] == nums[i + 1]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+vector<int> problem::intersection(vector<int>& nums1, vector<int>& nums2) {
+    vector<int> num;
+    set<int> set1(nums1.begin(), nums1.end());
+    set<int> set2(nums2.begin(), nums2.end());
+    for (int i : set2) {
+        if (set1.count(i)) {
+            num.push_back(i);
+        }
+    }
+    return num;
+}
+
+int problem::thirdMax(vector<int>& nums) {
+    int rez;
+    set<int> max3;
+    for (int i : nums) {
+        max3.insert(i);
+        if (max3.size() > 3) {
+            max3.erase(max3.begin());
+        }
+    }
+    if (max3.size() == 3) {
+        rez = *max3.begin();
+    }
+    else {
+        rez = *max3.rbegin();
+    }
+    return rez;
+}
+
+vector<int> problem::shuffle(vector<int>& nums, int n) {
+    vector<int> rez;
+    int x = 0, y = n, turn=0;
+    while (turn < nums.size() / 2) {
+        rez.push_back(nums[x++]);
+        rez.push_back(nums[y++]);
+        turn += 1;
+    }
+    return rez;
+}
+
+string problem::restoreString(string s, vector<int>& indices) {
+    string solution = s;
+    for (int i = 0; i < indices.size(); i++) {
+        solution[indices[i]] = s[i];
+    }
+    return solution;
+}
+
+int problem::finalValueAfterOperations(vector<string>& operations) {
+    int x = 0;
+    int i = 0;
+    while (i < operations.size()) {
+        if (operations[i] == "++X" || operations[i] == "X++") {
+            x++;
+        }
+        else if (operations[i] == "--X" || operations[i] == "X--") {
+            x--;
+        }
+        i++;
+    }
+    return x;
+}
+
+int problem::romanToInt(string s) {
+    int num = 0;
+    unordered_map<char, int> values = { {'I', 1}, {'V', 5},{'X', 10}, {'L', 50}, {'C', 100}, {'D', 500}, {'M', 1000} };
+    for (int i = 0; i < s.size(); i++) {
+        int value = values[s[i]];
+        if (i + 1 < s.size() && values[s[i + 1]] > value) {
+            num -= value;
+        }
+        else {
+            num += value;
+        }
+    }
+    return num;
+}
+
+bool problem::isValid(string s) {
+    stack <char> a;
+    int num = 0;
+    for (int i = 0; i < s.size(); i++) {
+        if (s[i] == '(' || s[i] == '{' || s[i] == '[') {
+            a.push(s[i]);
+        }
+        else if ((s[i] == ')' && a.empty()) || (s[i] == '}' && a.empty()) || (s[i] == ']' && a.empty())) { num++; break; }
+        else if ((s[i] == ')' && a.top() == '(') || (s[i] == ']' && a.top() == '[') || (s[i] == '}' && a.top() == '{')) {
+            a.pop();
+        }
+        else {
+            num++;
+            break;
+        }
+    }
+    if (num == 0) {
+        if (a.empty()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        return false;
+    }
+};
+
+int problem::lengthOfLastWord(string s) {
+    int length = 0;
+    int i = s.size() - 1;
+    while (i >= 0 && s[i] == ' ') {
+        i--;
+    }
+    while (i >= 0 && s[i] != ' ') {
+        length++;
+        i--;
+    }
+    return length;
+}
+
+bool problem::isAnagram(string s, string t) {
+    sort(s.begin(), s.end());
+    sort(t.begin(), t.end());
+    if (t == s) {
+        return true;
+    }
+    return false;
+}
+
+vector<char> problem::reverseString(vector<char>& s) {
+    vector<char> solution;
+    int right = 0, left = s.size() - 1;
+    while (left > right) {
+        swap(s[right], s[left]);
+        right++;
+        left--;
+    }
+    for (int i = 0; i < s.size(); i++) {
+        solution.push_back(s[i]);
+    }
+    return solution;
+}
+
+int problem::firstUniqueChar(string s) {
+    unordered_map <char, int> map;
+    for (char c : s) {
+        map[c]++;
+    }
+    for (int i = 0; i < s.size(); i++) {
+        if (map[s[i]] == 1) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+char problem::findTheDifference(string s, string t) {
+    sort(s.begin(), s.end());
+    sort(t.begin(), t.end());
+    for (int i = 0; i < t.size(); i++) {
+        if (s[i] != t[i]) {
+            return t[i];
+        }
+    }
+    return t.back();
+}
+
+vector<string> problem::fizzBuzz(int n) {
+    vector<string> answer;
+    for (int i = 1; i <= n; i++) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            answer.push_back("FizzBuzz");
+        }
+        else if (i % 3 == 0) {
+            answer.push_back("Fizz");
+        }
+        else if (i % 5 == 0) {
+            answer.push_back("Buzz");
+        }
+        else {
+            string str = to_string(i);
+            answer.push_back(str);
+        }
+    }
+    return answer;
+}
+
+string problem::toLowerCase(string s) {
+    for (char& c : s) {
+        if (c >= 'A' && c <= 'Z') {
+            c = c - 'A' + 'a';
+        }
+    }
+    return s;
+}
