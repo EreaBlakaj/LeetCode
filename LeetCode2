@@ -29,6 +29,7 @@ struct ListNode {
 struct problem {
 	//Detyra me Stacks
 	//Detyra 1: 225. Implement Stack using Queues
+	//The space complexity is O(n)
     class MyStack {
     private:
         queue<int> q1;
@@ -37,10 +38,12 @@ struct problem {
     public:
         MyStack() {
         }
+	//The time complexity is O(1)
         void push(int x) {
             q1.push(x);
             topElement = x;
         }
+	//The time complexity is O(n)
         int pop() {
             while (q1.size() > 1) {
                 topElement = q1.front();
@@ -52,15 +55,18 @@ struct problem {
             swap(q1, q2);
             return removedElement;
         }
+	//The time complexity is O(1)
         int top() {
             return topElement;
         }
+	//The time complexity is O(1)
         bool empty() {
             return q1.empty();
         }
     };
 
     //Detyra 2: 232. Implement Queue using Stacks
+    //The space complexity is O(n)
     class MyQueue {
     private:
         stack<int> inS;
@@ -69,9 +75,11 @@ struct problem {
         MyQueue() {
 
         }
+	//The time complexity is O(1)
         void push(int x) {
             inS.push(x);
         }
+	//The time complexity is O(n)
         int pop() {
             if (outS.empty()) {
                 while (!inS.empty()) {
@@ -83,6 +91,7 @@ struct problem {
             outS.pop();
             return firstElement;
         }
+	//The time complexity is O(n)
         int peek() {
             if (outS.empty()) {
                 while (!inS.empty()) {
@@ -92,12 +101,14 @@ struct problem {
             }
             return outS.top();
         }
+	//The time complexity is O(1)
         bool empty() {
             return inS.empty() && outS.empty();
         }
     };
 
     //Detyra 3: 1381. Design a Stack With Increment Operation
+    //The space complexity is O(k)
     class CustomStack {
     private:
         stack<int> steku;
@@ -140,6 +151,7 @@ struct problem {
 
     //Detyra me Queue
     //Detyra 4: 933. Number of Recent Calls
+    //The space complexity is O(1)
     class RecentCounter {
     private:
         queue<int> q;
@@ -147,6 +159,7 @@ struct problem {
         RecentCounter() {
 
         }
+	//The time complexity is O(n)
         int ping(int t) {
             q.push(t);
             while (q.front() < t - 3000) {
@@ -159,6 +172,8 @@ struct problem {
     //Detyra 5: 1700. Number of Students Unable to Eat Lunch
     class Solution5 {
     public:
+    	//The time complexity is O(n^2)
+	//The space complexity is O(n)
         int countStudents(vector<int>& students, vector<int>& sandwiches) {
             int n = students.size();
             queue<int> studentQueue;
@@ -188,6 +203,8 @@ struct problem {
     };
 
     //Detyra 6: 2073. Time Needed to Buy Tickets
+    //The time complexity is O(k*n)
+    //The space complexity is O(1)
     class Solution6 {
     public:
         int timeRequiredToBuy(vector<int>& tickets, int k) {
@@ -210,6 +227,8 @@ struct problem {
 
     //Detyra me Sorting
     //Detyra 7: 268. Missing Number
+    //The time complexity is O(n)
+    //The space complexity is O(1)
     class Solution7 {
     public:
         int missingNumber(vector<int>& nums) {
@@ -223,6 +242,8 @@ struct problem {
     };
 
     //Detyra 8: 561. Array Partition
+    //The time complexity is O(n log n)
+    //The space complexity is O(1)
     class Solution8 {
     public:
         int arrayPairSum(vector<int>& nums) {
@@ -236,6 +257,8 @@ struct problem {
     };
 
     //Detyra 9: 88. Merge Sorted Array
+    //The time complexity is O((m+n)log(m+n))
+    //The space complexity is O(1)
     class Solution9 {
     public:
         void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
@@ -248,6 +271,8 @@ struct problem {
 
     //Detyra Greedy
     //Detyra 10: 976. Largest Perimeter Triangle
+    //The time complexity is O(n log n)
+    //The space complexity is O(1)
     class Solution10 {
     public:
         int largestPerimeter(vector<int>& nums) {
