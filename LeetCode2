@@ -289,6 +289,8 @@ struct problem {
     };
 
     //Detyra 11: 409. Longest Palindromeclass Solution 
+    //The time complexity is O(n)
+    //The space complexity is O(n)
     class Solution11{
     public:
     int longestPalindrome(string s) {
@@ -312,6 +314,8 @@ struct problem {
 };
 
     //Detya 12: 860. Lemonade Change
+    //The time complaxityh is O(n)
+    //The space complexityh is O(1)
     class Solution12 {
     public:
         bool lemonadeChange(vector<int>& bills) {
@@ -347,6 +351,8 @@ struct problem {
 
     //Detyra me Binary Search
     //Detyra 13: 704. Binary Search
+    //The time complexity is O(log n)
+    //The space complexity is O(n)
     class Solution13 {
     public:
         int search(vector<int>& nums, int target) {
@@ -369,6 +375,8 @@ struct problem {
     };
 
     //Detyra 14: 350. Intersection of Two Arrays II
+    //The time complexity is O(n logn+m logn)
+    //The space complexity is O(min(n,m))
     class Solution14 {
     public:
         vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
@@ -395,6 +403,8 @@ struct problem {
     };
 
     //Detyra 15: 35. Search Insert Position
+    //The time complexity is O(log n)
+    //The space complexity is O(1)
     class Solution15 {
     public:
         int searchInsert(vector<int>& nums, int target) {
@@ -421,6 +431,8 @@ struct problem {
 
     //Detyra me Tree
     //Detyra 16: 94. Binary Tree Inorder Traversal
+    //The time complexity is O(n)
+    //The space complexity is O(n)
     class Solution16 {
     public:
         vector<int> inorderTraversal(TreeNode* root) {
@@ -443,6 +455,8 @@ struct problem {
     };
 
     //Detyra 17: 104. Maximum Depth of Binary Tree
+    //The time complexity is O(n)
+    //The space complexity is O(n)
     class Solution17 {
     public:
         int maxDepth(TreeNode* root) {
@@ -458,6 +472,8 @@ struct problem {
     };
 
     //Detyra 18: 100. Same Tree
+    //The time complexity is O(n)
+    //The space complexity is O(n)
     class Solution18 {
     public:
         bool isSameTree(TreeNode* p, TreeNode* q) {
@@ -476,6 +492,8 @@ struct problem {
 
     //Detyra me LinkedLists
     //Detyera 19: 206. Reverse Linked List
+    //The time complexity is O(n)
+    //The space complexity is O(1)
     class Solution19 {
     public:
         ListNode* reverseList(ListNode* head) {
@@ -492,6 +510,8 @@ struct problem {
     };
 
     //Detyra 20: 21. Merge Two Sorted Lists
+    //The time complexity is O(n)
+    //The space complexity is O(n)
     class Solution20 {
     public:
         ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
